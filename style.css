@@ -1,0 +1,208 @@
+/* Base */
+:root {
+  --ink: #0b0f19;
+  --paper: #f6f2e9;
+  --paper-2: #fffdf8;
+  --line: #1a2233;
+  --line-soft: #3a465e;
+  --blue: #0b4db6;
+  --red: #b00020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.25;
+  padding: 24px;
+}
+
+/* Layout geral */
+header,
+main,
+footer {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+header {
+  background: var(--paper-2);
+  border: 2px solid var(--line);
+  padding: 18px 18px 10px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 0 12px;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+hr {
+  border: 0;
+  border-top: 2px solid var(--line);
+  max-width: 1100px;
+  margin: 18px auto;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper-2);
+  border: 2px solid var(--line);
+}
+
+caption {
+  caption-side: top;
+  text-align: center;
+  padding: 12px 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--line);
+  color: var(--blue);
+}
+
+th,
+td {
+  border: 1px solid var(--line-soft);
+  padding: 10px 8px;
+  vertical-align: middle;
+}
+
+thead th {
+  background: #eef3ff;
+  border-color: var(--line);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+tbody th[scope="row"] {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+td {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Tabela pequena do header */
+header table {
+  border: 1px solid var(--line);
+}
+header th,
+header td {
+  border-color: var(--line-soft);
+  padding: 8px 10px;
+  text-align: left;
+}
+header th {
+  width: 1%;
+  white-space: nowrap;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+/* Rodape */
+footer {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 26px;
+}
+
+footer a {
+  display: inline-block;
+  background: #ffeef3;
+  border: 2px solid var(--red);
+  color: var(--red);
+  padding: 12px 14px;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+footer a {
+  animation: pulseNotice 1.2s ease-in-out infinite;
+}
+
+@keyframes pulseNotice {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: none;
+  }
+  50% {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+  }
+}
+
+/* Status */
+.status {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.status--reprovado {
+  color: var(--red);
+}
+
+/* Porte para celulares */
+@media (max-width: 700px){
+  body{ padding: 12px; }
+
+  header{ padding: 14px 12px 10px; }
+  h1{ font-size: 16px; }
+
+  main table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  caption{
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  thead th{
+    font-size: 11px;
+  }
+
+  th, td{
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  header table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  footer a{
+    width: 100%;
+    max-width: 360px;
+  }
+}
